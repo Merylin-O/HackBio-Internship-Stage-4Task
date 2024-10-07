@@ -1,4 +1,4 @@
-# **Comparison of IDH Mutant and IDH Wild Type samples, including the comparison of pan-glioma subtypes **
+# **Comparison of IDH Mutant and IDH Wild Type samples, including the comparison of pan-glioma subtypes**
  
 ## **Description**
 This project is centered around the analysis of Low Grade Glioma (LGG) gene expression. The project is split into three parts:
