@@ -45,6 +45,7 @@ We extracted the DEGs for each subset then used biomaRt to convert EnsembleIDs t
 
 Our analysis showed that the up and down regulated pathways align with the pathways described in the paper. For example, some of the down regulated pathways in wildtype gliomas were related to cell adhesion, collagen metabolism, and extracellular matrix remodeling, which is consistent with the poor prognosis and invasive behavior described in the paper. 
 Additionally, immune-related pathways are significantly upregulated in mutant gliomas. Both LGr1 and LGr4 analyses show enhanced lymphocyte activation, T-cell activation, and antigen presentation via MHC class II, suggesting active immune responses. While the paper primarily focuses on the less aggressive nature of mutant gliomas, these immunoupregulations hint at complex interactions that affect immune response or tumor suppression.
+Also, from our analysis, in corroboration with the findings of the paper by Ceccarelli et al. (2016), we discovered that the comparison between the LGr1 and LGr4 showed that the was the IDH wild type samples contained more LGr4 pan-glioma expression sub-types, while the IDH mutant samples contained more LGr1
 
 
 # **Conclusion**
