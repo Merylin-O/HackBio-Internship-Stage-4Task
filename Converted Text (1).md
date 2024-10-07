@@ -36,8 +36,6 @@ We performed DEA using edgeR to identify DEGs in glioma samples with significanc
 
 Figure 4: Heatmap showcasing the DEA results of WT glioma in LGr 1 and 4
 
-<!--StartFragment-->
-
 ## **Functional Enrichment Analysis**
 
 We extracted the DEGs for each subset then used biomaRt to convert EnsembleIDs to GeneIDS to perform FEA, and more specifically GO analysis to pinpoint the biological processes, molecular functions, and cellular components linked to these genes.
