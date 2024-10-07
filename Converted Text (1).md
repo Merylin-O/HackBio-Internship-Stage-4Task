@@ -1,10 +1,8 @@
-Authors: Nour Nahtay (@NourNahtay), Merylin Ogunola (@Merylin
-
-**Introduction**
+# **Introduction**
 
 Adult diffuse gliomas are the most frequent malignant tumors affecting the central nervous system. Survival rates differ significantly based on subtype. Low-grade gliomas have a high 5-year survival rate, whereas high-grade gliomas are associated with much lower 5-year survival rates. _(Molinaro AM et al. 2019)_
 
- Although histopathologic classification is well-established it is prone to significant intra- and inter-observer variability, especially in grade II-III tumors. _(Whitfield BT et al.,2022)_ 
+Although histopathologic classification is well-established it is prone to significant intra- and inter-observer variability, especially in grade II-III tumors. _(Whitfield BT et al.,2022)_ 
 
 One key identifier is The isocitrate dehydrogenase family, which comprises three isoforms located in the cytoplasm and peroxisomes (IDH1), and mitochondria (IDH2 and IDH3). These enzymes are involved in cellular processes including mitochondrial oxidative phosphorylation, glutamine metabolism, and more. _(Cairns R et al.,2013)_
 
@@ -20,11 +18,9 @@ We sought to determine pan-glioma expression subtypes through unsupervised clust
 
 ****![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcd4r5ukJjy-WqjyeXdn_iws4mSBVhG9tQE-WJOF_2n3v7M7MONO_M2wQdzAGRYRv5DFMsMNpW8TAj87Oc78DG5JpsalGsMezikPhKmhR6zQe0Syf9n48jeB9ZHbAgnHCxkhqpKhjLfQ_IUahu23jVQMtK4?key=AgyQUxUvRaYsce19bm41Iw)****
 
-Figure 1: An Overview of the Packages Used for Biomarker Discovery Pipeline
+Figure 1: An Overview of the Packages Used for Biomarker Discovery Pipeline Created in BioRender.com
 
-Created in BioRender.com
-
-**Data Preprocessing and Analysis**
+## **Data Preprocessing and Analysis**
 
 TCGA-LGG data is uploaded onto RStudio, then filtered according to IDH status and type. For this analysis we decided to compare between LGr1 & LGr2, and LGr1 & LGr4. Normalization and filtering were performed with a cutoff of 0.25.
 
@@ -32,11 +28,9 @@ TCGA-LGG data is uploaded onto RStudio, then filtered according to IDH status an
 
 Figure 2: Data subset for this Analysis
 
-**Differential Expression Analysis**
+## **Differential Expression Analysis**
 
 We performed DEA using edgeR to identify DEGs in glioma samples with significance criteria set at an adjusted log2 fold change (log FC) > 2 and a false discovery rate (FDR) < 0.01.
-
-Figure 3: Heatmap showcasing the DEA results of mutant type glioma in LGr 1 and 4
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfKlK8AYdpmw1iZDPqmwCz2kBTOMDALFTeufIgJzyQ8B3l5zGKpZgSoI3DGMY3M2ce9_rUUg4f7R3UVsEuzTzE1VUUrfWMUyNKtcI2LfzKR3V9oo22cBwDrB-bK3zw_xpSPSoAjmbhy7W5_BbyLa-QaA56o?key=AgyQUxUvRaYsce19bm41Iw)
 
@@ -44,46 +38,18 @@ Figure 4: Heatmap showcasing the DEA results of WT glioma in LGr 1 and 4
 
 <!--StartFragment-->
 
-**Functional Enrichment Analysis**
+## **Functional Enrichment Analysis**
 
 We extracted the DEGs for each subset then used biomaRt to convert EnsembleIDs to GeneIDS to perform FEA, and more specifically GO analysis to pinpoint the biological processes, molecular functions, and cellular components linked to these genes.
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdIKsBkHUNkEuCw9yvFFlkAEyiRR57hIKy8GKF-Fgt4EBy0Lh1RppRJDePBRe1a4dLHaqx9gDuMcV-4KYQRr1nHLFDuR8wIn00b44FZ_TIyq6C2xWwhsTJzIwLaizuJFMdd_d2rHMk65jr5TqLbdldrUAHl?key=AgyQUxUvRaYsce19bm41Iw)
 
-Figure 5: FEA results of the upregulated genes of WT glioma on LGr1
+# **Comparison of results**
+
+Our analysis showed that the up and down regulated pathways align with the pathways described in the paper. For example, some of the down regulated pathways in wildtype gliomas were related to cell adhesion, collagen metabolism, and extracellular matrix remodeling, which is consistent with the poor prognosis and invasive behavior described in the paper. 
+Additionally, immune-related pathways are significantly upregulated in mutant gliomas. Both LGr1 and LGr4 analyses show enhanced lymphocyte activation, T-cell activation, and antigen presentation via MHC class II, suggesting active immune responses. While the paper primarily focuses on the less aggressive nature of mutant gliomas, these immunoupregulations hint at complex interactions that affect immune response or tumor suppression.
 
 
-**Comparison of results**
-
-Our analysis showed that the up and down regulated pathways align with the pathways described in the paper. For example, some of the down regulated pathways in wildtype gliomas were related to cell adhesion, collagen metabolism, and extracellular matrix remodeling, which is consistent
-
-with the poor prognosis and invasive behavior described in the paper. 
-
-Additionally, immune-related pathways are significantly upregulated in mutant gliomas. Both
-
-LGr1 and LGr4 analyses show enhanced lymphocyte activation, T-cell activation, and antigen
-
-presentation via MHC class II, suggesting active immune responses
-
-While the paper primarily focuses on the less aggressive nature of mutant gliomas, these immunoupregulations hint at complex interactions that affect immune response or tumor suppression.
-
-**Machine Learning**
-
-****![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc4X5axJXYP0xxSqui47vmTu92puHOhU1gKM2CSGXtPJBV2JwMDnqXdcPDMH7gX2Te7qblfrYFwK1kiTP0QV8S1z0NnL0W7pnfK8w9QF5DiF05zb2P4jEcst9aLQIs6EK2AjepuH7yhmotRshklVYw3TDpP?key=AgyQUxUvRaYsce19bm41Iw)****
-
-Figure 13: k-NN
-
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdeHgeM8S4VWVmLuCm84hTqK9MRYuYHMsn8FZSj4B8kVanFPTRDidzxTiCfdydP6usZCnk4RcAyycy9pC8AWIEVTOLrmc3KFBiUWiPAvoFOmvJszpPFDx-vSMkpfc2mG0s3GXr9qyM1sj25PbAtQVRdwAU?key=AgyQUxUvRaYsce19bm41Iw)
-
-Figure 14: Random Forest
-
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeZI4t1HCd4GAoz_c6ogsOMbAk15_gJQiUTNH4b8XvBJCe9STmlVd5vms_5BfdOeNxWXsO1ZJuyoigAdbljjz1nepfNBoSRMb6oTiuyIx_6CEaFIVREoITWWv2zxZiu1vCM1bvIpGi33__QRHvK5Ks81bFM?key=AgyQUxUvRaYsce19bm41Iw)
-
-Figure 15: rf model
-
-.
-
-**Conclusion**
+# **Conclusion**
 
 In summary, IDH-wildtype gliomas exhibit down regulated pathways linked to invasion and
 
@@ -101,6 +67,5 @@ of proliferative pathways and upregulation of immune-related processes, consiste
 
 4. Ceccarelli et. al, (2016). Molecular Profiling Reveals Biologically Discrete Subsets and Pathways of Progression in Diffuse Glioma. Cell, 164(3), 550–563. <https://doi.org/10.1016/j.cell.2015.12.028>
 
-**Word Count (Excluding in-text citations):** 419
 
 <!--EndFragment-->
